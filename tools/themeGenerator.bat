@@ -1,5 +1,5 @@
 ::change this for the place where you have the App.java
-cd C:\Documents\Personal\untitled\src
+cd C:\Documents\Personal\themeMaker\src
 javac App.java
 java App
 ::change this to the folder you unzipped the themes from the jar in plugins

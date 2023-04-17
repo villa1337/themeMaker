@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -11,8 +12,8 @@ import java.util.regex.Pattern;
 
 public class App {
 
-    public static final String originalXmlPath = "C:/Users/villafra/Documents/Personal/Scripts/Dark-Themes-1.0.8/themes/Aura.xml";
-    public static final String originalJsonPath = "C:/Users/villafra/Documents/Personal/Scripts/Dark-Themes-1.0.8/themes/aura.theme.json";
+    public static final String originalXmlPath = "C:/Users/villafra/Documents/Personal/Scripts/Dark-Themes-2.0.1/themes/Aura.xml";
+    public static final String originalJsonPath = "C:/Users/villafra/Documents/Personal/Scripts/Dark-Themes-2.0.1/themes/aura.theme.json";
 
     public static void generateNewFile(String path, String regex){
         try {
@@ -64,8 +65,8 @@ public class App {
     }
 
     private static String getRandomHueHexColor(float[] hsbColors) {
-        float randomBaseline = (float)Math.random()*.2f+.2f;
-        float randomHue = randomBaseline*randomBaseline+randomBaseline;
+        Random rand = new Random();
+        float randomHue = rand.nextFloat();
         Color newColor = new Color(Color.HSBtoRGB(randomHue,hsbColors[1],hsbColors[2]));
         String result = "";
         String red = twoDigitize(Integer.toString(newColor.getRed(), 16));
